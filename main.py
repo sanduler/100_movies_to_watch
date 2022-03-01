@@ -33,3 +33,13 @@ for article_tag in movie_titles:
 int_movie_rankings = movie_rankings[::-1]
 string_movie_listings = movie_listings[::-1]
 
+# open and create a new file if doesn't exist
+file = open("movies.txt", "w")
+
+# loop through each index in the rantings and movie list
+for index in range(len(int_movie_rankings)):
+    # use an f string to write the movies to a file as a well
+    # as use the index of the movie location in the movie_listings
+    file.write(f"{int_movie_rankings[index]}) {string_movie_listings[index]} \n")
+# close the opened file.
+file.close()
